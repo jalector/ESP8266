@@ -53,7 +53,7 @@ El consumo de energía dependerá de diferentes factores, como el modo en el que
 
 ## Diagrama de placa ESP8266-01
 
-![Imagen](Imagenes/Diagrama.jpg)
+![Imagen](Imagenes/Diagrama.png)
 
 #### Pines
 
@@ -88,6 +88,7 @@ Una vez realizadas las conexiones se procede a conectar el Arduino (En nuestro c
 4.	Poner la consola serial con **Ambos NL & CR** para mostrar información en el monitor serial.
 5.	Reiniciar placa **ESP8266-01** desconectando y conectando el pin **CH_PD** a VCC
 6.	En el monitor serial se apreciara una serie de caracteres y la palabra ready, lo que indica que está listo para recibir los comandos AT.
+
 ![Imagen](Imagenes/ComandosAT.jpg)
 7.	Ingresar el comando **AT** y responderá con un **OK** lo que indica que existe comunicación
 8.	Introducir el comando **AT+CWMODE=3** para poner el módulo en modo estación y access point (Conectarse a una red y crear una red)
@@ -134,4 +135,5 @@ En Internet vienen varios ejemplos de programas para utilizar el módulo como cl
 ### Referencias bibliográficas
 
 https://programarfacil.com/podcast/esp8266-wifi-coste-arduino/
+
 https://github.com/esp8266/Arduino/issues/2801
