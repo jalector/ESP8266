@@ -90,6 +90,7 @@ Una vez realizadas las conexiones se procede a conectar el Arduino (En nuestro c
 6.	En el monitor serial se apreciara una serie de caracteres y la palabra ready, lo que indica que está listo para recibir los comandos AT.
 
 ![Imagen](Imagenes/ComandosAT.jpg)
+
 7.	Ingresar el comando **AT** y responderá con un **OK** lo que indica que existe comunicación
 8.	Introducir el comando **AT+CWMODE=3** para poner el módulo en modo estación y access point (Conectarse a una red y crear una red)
 9.	Verificar que el módulo se encuentre en ese modo introduciendo el comando **AT+CWMODE?** (La respuesta debe de ser 3).
