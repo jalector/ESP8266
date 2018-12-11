@@ -25,9 +25,8 @@ Los cuales se presentan debido a que el microcontrolador del Arduino recibe las 
 
 ## Placa Wifi ESP8266-01
 
-```bash
-Una imagen
-```
+![Imagen](Imagenes/Componentes_de_placa.jpg)
+
 Tiene disponible dos pines GPIO digitales para controlar sensores y actuadores.
 
 También se puede llegar a utilizar para este uso los pines Rx y Tx si no se utilizan para la comunicación a través del puerto serie. Se puede programar a través de un adaptador serie/USB o con el cableado adecuado, a través de Arduino. Los conectores que vienen por defecto, no permite conectarlo a la protoboard.
@@ -54,9 +53,8 @@ El consumo de energía dependerá de diferentes factores, como el modo en el que
 
 ## Diagrama de placa ESP8266-01
 
-```bash
-Una imagen
-```
+![Imagen](Imagenes/Diagrama.jpg)
+
 #### Pines
 
 1.	Tierra (Conectada a la tierra de Arduino y si se tiene fuentes de alimentación externa, conectar tierra común).
@@ -66,7 +64,7 @@ Una imagen
 5.	Pin de transmisión de datos.
 6.	Usado para prender y apagar el módulo al desconectar y volver a conectarlo a voltaje. Siempre debe estar conectado. Recibe 3.3V (IMPORTANTE!!! No puede recibir más voltaje porque se puede quemar).
 7.	Usado para reiniciar el módulo al conectarlo y desconectarlo de Tierra.
-8.	Pin que recibe la corriente de voltaje 3.3V (IMPORTANTE!!! No puede recibir más voltaje porque se puede quemar).
+8.	Pin que recibe la corriente de voltaje 3.3V (**IMPORTANTE!!! No puede recibir más voltaje porque se puede quemar**).
 
 ## Justificación de retirar microcontrolador
 
@@ -87,12 +85,13 @@ Una vez realizadas las conexiones se procede a conectar el Arduino (En nuestro c
 1.	Abrir el programa Arduino si es que no lo tenemos abierto
 2.	Abrir la consola serial
 3.	Poner 9600 o 115200 baudios (La frecuencia en la que funciona el módulo puede ser de 9600 o 115200 baudios, esto puede variar en cada módulo ESP8266, en nuestro caso, nos funcionó con 115200 baudios).
-4.	Poner la consola serial con --Ambos NL & CR-- para mostrar información en el monitor serial.
+4.	Poner la consola serial con **Ambos NL & CR** para mostrar información en el monitor serial.
 5.	Reiniciar placa **ESP8266-01** desconectando y conectando el pin **CH_PD** a VCC
 6.	En el monitor serial se apreciara una serie de caracteres y la palabra ready, lo que indica que está listo para recibir los comandos AT.
-7.	Ingresar el comando AT y responderá con un OK lo que indica que existe comunicación
-8.	Introducir el comando AT+CWMODE=3 para poner el módulo en modo estación y access point (Conectarse a una red y crear una red)
-9.	Verificar que el módulo se encuentre en ese modo introduciendo el comando AT+CWMODE? (La respuesta debe de ser 3).
+![Imagen](Imagenes/ComandosAT.jpg)
+7.	Ingresar el comando **AT** y responderá con un **OK** lo que indica que existe comunicación
+8.	Introducir el comando **AT+CWMODE=3** para poner el módulo en modo estación y access point (Conectarse a una red y crear una red)
+9.	Verificar que el módulo se encuentre en ese modo introduciendo el comando **AT+CWMODE?** (La respuesta debe de ser 3).
 
 [Lista de comandos AT](https://www.itead.cc/wiki/ESP8266_Serial_WIFI_Module#AT_Commands)
 
@@ -102,12 +101,15 @@ Una vez realizadas las conexiones se procede a conectar el Arduino (En nuestro c
 
 1.	En el menú superior ir a:  **Archivo > Preferencias**
 2.	En gestor de URLs y tarjetas poner insertar lo siguiente y dar click en OK: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+![Imagen](Imagenes/ConfiguracionIDE2.jpg)
 3.	Después ir a **Herramientas > Placa > Gestor de tarjetas**
 4.	Buscar **ESP8266**
 5.	Instalar **ESP8266**
+![Imagen](Imagenes/ConfiguracionIDE2.jpg)
 6.	Ahora nos vamos a: **Herramientas > Placa > Generic ESP8266 Module**
+![Imagen](Imagenes/ConfiguracionIDE3.jpg)
 
-Nota: Cuando queramos programar el módulo **ESP8266-01**  en el IDE se requiere cambiar la placa objetivo, tanto para programar el módulo como para programar el Arduino. Hay que asegurarse que la placa objetivo sea la deseada.
+**Nota:** Cuando queramos programar el módulo **ESP8266-01**  en el IDE se requiere cambiar la placa objetivo, tanto para programar el módulo como para programar el Arduino. Hay que asegurarse que la placa objetivo sea la deseada.
 
 ### Subir un sketch al módulo ESP8266-01
 
@@ -121,7 +123,7 @@ Los pasos a seguir son los siguientes:
 4.	Conectar el pin **GPIO0** a Tierra por medio de una resistencia de 10kOhms para entrar al modo de programación.
 5.	Volver a conectar el pin **CH_PD** de la alimentación de voltaje, para reiniciar el módulo.
 6.	Una vez reiniciado el módulo, el monitor serial nos mostrará una serie de caracteres sin sentido pero no ejecutará ningún programa ni mostrará la palabra ready, debido a que estará esperando el programa que será cargado.
-7.	Se carga el programa en el módulo ESP8266 y una vez cargado se desconecta el pin GPIO0.
+7.	Se carga el programa en el módulo **ESP8266** y una vez cargado se desconecta el pin **GPIO0**.
 8.	Se ejecutará el programa cargado en el módulo.
 
 Un ejemplo que pueden probar para cargar un programa al módulo ESP8266 es el siguiente: https://www.youtube.com/watch?v=F79_EFFDoAA
